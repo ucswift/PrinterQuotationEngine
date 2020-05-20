@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Company>MatterHackers Inc.</Company>
+    <AssemblyName>MatterHackers.Csg</AssemblyName>
+    <RootNamespace>MatterHackers.Csg</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\agg\Agg.csproj" />
+    <ProjectReference Include="..\PolygonMesh\PolygonMesh.csproj" />
+    <ProjectReference Include="..\VectorMath\VectorMath.csproj" />
+  </ItemGroup>
+
+</Project>

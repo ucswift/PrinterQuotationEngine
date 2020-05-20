@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Company>MatterHackers Inc.</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Net3dBool\**" />
+    <Compile Remove="ObjParser\**" />
+    <EmbeddedResource Remove="Net3dBool\**" />
+    <EmbeddedResource Remove="ObjParser\**" />
+    <None Remove="Net3dBool\**" />
+    <None Remove="ObjParser\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MIConvexHull" Version="1.1.18.1016" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\agg\Agg.csproj" />
+    <ProjectReference Include="..\clipper_library\clipper_library.csproj" />
+    <ProjectReference Include="..\VectorMath\VectorMath.csproj" />
+    <ProjectReference Include="Net3dBool\Net3dBool.csproj" />
+  </ItemGroup>
+
+</Project>

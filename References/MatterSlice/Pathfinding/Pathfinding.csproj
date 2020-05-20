@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Company>MatterHackers Inc.</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KdTree" Version="1.4.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\agg-sharp\agg\Agg.csproj" />
+    <ProjectReference Include="..\..\agg-sharp\ImageProcessing\ImageProcessing.csproj" />
+    <ProjectReference Include="..\..\agg-sharp\VectorMath\VectorMath.csproj" />
+    <ProjectReference Include="..\MSClipperLib\MSClipperLib.csproj" />
+    <ProjectReference Include="..\QuadTree\QuadTree.csproj" />
+  </ItemGroup>
+
+</Project>

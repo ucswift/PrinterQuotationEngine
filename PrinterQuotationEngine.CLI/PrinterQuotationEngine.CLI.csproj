@@ -1,0 +1,211 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PrinterQuotationEngine\PrinterQuotationEngine.csproj" />
+    <ProjectReference Include="..\References\agg-sharp\agg\Agg.csproj" />
+    <ProjectReference Include="..\References\agg-sharp\ImageProcessing\ImageProcessing.csproj" />
+    <ProjectReference Include="..\References\agg-sharp\Typography.One\Typography.One.csproj" />
+    <ProjectReference Include="..\References\agg-sharp\VectorMath\VectorMath.csproj" />
+    <ProjectReference Include="..\References\gsGCode\gsGCode.csproj" />
+    <ProjectReference Include="..\References\MatterSlice\MatterSliceLib\MatterSliceLib.csproj" />
+    <ProjectReference Include="..\References\MatterSlice\MSClipperLib\MSClipperLib.csproj" />
+    <ProjectReference Include="..\References\MatterSlice\Pathfinding\Pathfinding.csproj" />
+    <ProjectReference Include="..\References\MatterSlice\QuadTree\QuadTree.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SampleSTLs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\References\MatterSlice\SampleSTLs\20mm-box bad winding.stl" Link="SampleSTLs\20mm-box bad winding.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\20mm-box.stl" Link="SampleSTLs\20mm-box.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\2BarsSupport.stl" Link="SampleSTLs\2BarsSupport.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\4Sided.stl" Link="SampleSTLs\4Sided.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\ab retraction test.stl" Link="SampleSTLs\ab retraction test.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\AvoidCrossing2Holes.stl" Link="SampleSTLs\AvoidCrossing2Holes.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\AvoidCrossing9Holes.stl" Link="SampleSTLs\AvoidCrossing9Holes.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Box Left.stl" Link="SampleSTLs\Box Left.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Box Right.stl" Link="SampleSTLs\Box Right.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bride 4 Directions Round Thin Separation.stl" Link="SampleSTLs\Bride 4 Directions Round Thin Separation.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bride 4 Directions Round.scad" Link="SampleSTLs\Bride 4 Directions Round.scad">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bride 4 Directions Round.stl" Link="SampleSTLs\Bride 4 Directions Round.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bride 4 Directions.scad" Link="SampleSTLs\Bride 4 Directions.scad">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bride 45 Simple.stl" Link="SampleSTLs\Bride 45 Simple.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - 4 Directions.scad" Link="SampleSTLs\Bridge Test - 4 Directions.scad">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - 4 Directions.stl" Link="SampleSTLs\Bridge Test - 4 Directions.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - Complex Open Side.scad" Link="SampleSTLs\Bridge Test - Complex Open Side.scad">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - Complex Open Side.stl" Link="SampleSTLs\Bridge Test - Complex Open Side.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - CoveredU 30 Degrees.stl" Link="SampleSTLs\Bridge Test - CoveredU 30 Degrees.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - CoveredU 45 Degrees.stl" Link="SampleSTLs\Bridge Test - CoveredU 45 Degrees.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - CoveredU 90 Degrees.stl" Link="SampleSTLs\Bridge Test - CoveredU 90 Degrees.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - CoveredU With Center.stl" Link="SampleSTLs\Bridge Test - CoveredU With Center.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Bridge Test - CoveredU.stl" Link="SampleSTLs\Bridge Test - CoveredU.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\comb.stl" Link="SampleSTLs\comb.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\cone.stl" Link="SampleSTLs\cone.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\cut out cube - c.stl" Link="SampleSTLs\cut out cube - c.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Cylinder2Wall50Sides.stl" Link="SampleSTLs\Cylinder2Wall50Sides.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Cylinder50Sides.stl" Link="SampleSTLs\Cylinder50Sides.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\CylinderWithHole.stl" Link="SampleSTLs\CylinderWithHole.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\CylinderWithHole200.stl" Link="SampleSTLs\CylinderWithHole200.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\CylinderWithHole30.stl" Link="SampleSTLs\CylinderWithHole30.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\deck_base.stl" Link="SampleSTLs\deck_base.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Hole Calibration.stl" Link="SampleSTLs\Hole Calibration.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\LimitSupportLines.scad" Link="SampleSTLs\LimitSupportLines.scad">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\LimitSupportLines.stl" Link="SampleSTLs\LimitSupportLines.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Matt.stl" Link="SampleSTLs\Matt.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\MatterControl - Coin.stl" Link="SampleSTLs\MatterControl - Coin.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\MatterSlice_Text.stl" Link="SampleSTLs\MatterSlice_Text.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\MH Coin In Shadow.stl" Link="SampleSTLs\MH Coin In Shadow.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\n.stl" Link="SampleSTLs\n.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\name-with-leading-n.stl" Link="SampleSTLs\name-with-leading-n.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Part A - Cube.stl" Link="SampleSTLs\Part A - Cube.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Part A+B Union.stl" Link="SampleSTLs\Part A+B Union.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Part A-B Difference.stl" Link="SampleSTLs\Part A-B Difference.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Part B - Sphere.stl" Link="SampleSTLs\Part B - Sphere.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\PathOrderObject.stl" Link="SampleSTLs\PathOrderObject.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\PerimeterLoops.stl" Link="SampleSTLs\PerimeterLoops.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\primitives.stl" Link="SampleSTLs\primitives.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\SimpleHole.stl" Link="SampleSTLs\SimpleHole.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\smallbox.stl" Link="SampleSTLs\smallbox.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Sphere20.stl" Link="SampleSTLs\Sphere20.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Support Ceiling.stl" Link="SampleSTLs\Support Ceiling.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Support Material 2 Bars.stl" Link="SampleSTLs\Support Material 2 Bars.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\supportTest.stl" Link="SampleSTLs\supportTest.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Thin Attach.stl" Link="SampleSTLs\Thin Attach.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\ThinMiddle.stl" Link="SampleSTLs\ThinMiddle.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\ThinMiddleSimple.stl" Link="SampleSTLs\ThinMiddleSimple.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Thinning Walls Ring.stl" Link="SampleSTLs\Thinning Walls Ring.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\Thinning Walls.stl" Link="SampleSTLs\Thinning Walls.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\ThinWalls.stl" Link="SampleSTLs\ThinWalls.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\References\MatterSlice\SampleSTLs\ThinWallsRect.stl" Link="SampleSTLs\ThinWallsRect.stl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
