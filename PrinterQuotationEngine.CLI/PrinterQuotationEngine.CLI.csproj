@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PrinterQuotationEngine\PrinterQuotationEngine.csproj" />
     <ProjectReference Include="..\References\agg-sharp\agg\Agg.csproj" />
     <ProjectReference Include="..\References\agg-sharp\ImageProcessing\ImageProcessing.csproj" />
     <ProjectReference Include="..\References\agg-sharp\Typography.One\Typography.One.csproj" />

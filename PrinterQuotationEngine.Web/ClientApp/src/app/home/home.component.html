@@ -1,0 +1,55 @@
+<mat-horizontal-stepper [linear]="true" labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <ng-template matStepLabel>Upload your STL</ng-template>
+    <form [formGroup]="firstFormGroup">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstNameCtrl" placeholder="Ex. Bob" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastNameCtrl" placeholder="Ex. Smith" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email Address</mat-label>
+        <input matInput formControlName="emailCtrl" placeholder="Ex. smith@mycorp.com" required type="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Company Name</mat-label>
+        <input matInput formControlName="companyNameCtrl" placeholder="Ex. My Corp">
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Upload your STL</ng-template>
+      <div class="container" appDnd (fileDropped)="onFileDropped($event)">
+        <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+        <img src="assets/img/dnd/ic-upload-file.svg" alt="">
+        <h3>Drag and drop file here</h3>
+        <h3>or</h3>
+        <label for="fileDropRef">Browse for file</label>
+      </div>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
