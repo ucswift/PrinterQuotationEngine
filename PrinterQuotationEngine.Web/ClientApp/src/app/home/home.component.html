@@ -1,28 +1,56 @@
 <mat-horizontal-stepper [linear]="true" labelPosition="bottom" #stepper>
   <mat-step [stepControl]="firstFormGroup">
-    <ng-template matStepLabel>Upload your STL</ng-template>
-    <form [formGroup]="firstFormGroup">
-      <mat-form-field>
-        <mat-label>First Name</mat-label>
-        <input matInput formControlName="firstNameCtrl" placeholder="Ex. Bob" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Last Name</mat-label>
-        <input matInput formControlName="lastNameCtrl" placeholder="Ex. Smith" required>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Email Address</mat-label>
-        <input matInput formControlName="emailCtrl" placeholder="Ex. smith@mycorp.com" required type="email">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Company Name</mat-label>
-        <input matInput formControlName="companyNameCtrl" placeholder="Ex. My Corp">
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
+    <ng-template matStepLabel>Your Info</ng-template>
+    <div class="example-container">
+      <form [formGroup]="firstFormGroup">
+        <mat-grid-list cols="1" rowHeight="70px">
+          <mat-grid-tile>
+            <div style="position: absolute; left: 0;">
+              <mat-form-field appearance="standard">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstNameCtrl" placeholder="Ex. Bob" required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div style="position: absolute; left: 0;">
+              <mat-form-field appearance="standard">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="lastNameCtrl" placeholder="Ex. Smith" required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div style="position: absolute; left: 0;">
+              <mat-form-field appearance="standard">
+                <mat-label>Email Address</mat-label>
+                <input matInput formControlName="emailCtrl" placeholder="Ex. smith@mycorp.com" type="email" required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div style="position: absolute; left: 0;">
+              <mat-form-field appearance="standard">
+                <mat-label>Company Name</mat-label>
+                <input matInput formControlName="companyNameCtrl" placeholder="Ex. My Corp" required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </div>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
