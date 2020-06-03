@@ -27,8 +27,9 @@ namespace PrinterQuotationEngine.Web.Controllers
 
 
 		[HttpPost]
-		public async Task<IActionResult> UploadFiles(List<IFormFile> files)
+		public async Task<IActionResult> UploadFiles()
 		{
+			var files = Request.Form.Files;
 			long size = files.Sum(f => f.Length);
 			var ids = new List<string>();
 

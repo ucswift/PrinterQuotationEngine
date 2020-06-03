@@ -35,8 +35,8 @@ namespace PrinterQuotationEngine.Web.Controllers
 			{
 				if (formFile.Length > 0)
 				{
-					var id = Path.GetRandomFileName();
-					var filePath = Path.Combine(_appOptionsAccessor.Value.GetUploadFolderLocation(), Path.GetRandomFileName());
+					var id = Guid.NewGuid().ToString();
+					var filePath = Path.Combine(_appOptionsAccessor.Value.GetUploadFolderLocation(), $"{id}.stl");
 
 					using (var stream = System.IO.File.Create(filePath))
 					{
