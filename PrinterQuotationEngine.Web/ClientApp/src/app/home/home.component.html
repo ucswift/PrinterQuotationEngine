@@ -5,49 +5,44 @@
       <form [formGroup]="firstFormGroup">
         <mat-grid-list cols="1" rowHeight="70px">
           <mat-grid-tile>
+            To get started, please fill out the information below and press "Next" to continue.
+          </mat-grid-tile>
+          <mat-grid-tile>
             <div style="position: absolute; left: 0;">
-              <mat-form-field appearance="standard">
+              <mat-form-field appearance="standard" style="width:15vw">
                 <mat-label>First Name</mat-label>
                 <input matInput formControlName="firstNameCtrl" placeholder="Ex. Bob" required>
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                <mat-hint>Hint</mat-hint>
               </mat-form-field>
             </div>
           </mat-grid-tile>
           <mat-grid-tile>
             <div style="position: absolute; left: 0;">
-              <mat-form-field appearance="standard">
-                <mat-label>First Name</mat-label>
+              <mat-form-field appearance="standard" style="width:15vw">
+                <mat-label>Last Name</mat-label>
                 <input matInput formControlName="lastNameCtrl" placeholder="Ex. Smith" required>
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                <mat-hint>Hint</mat-hint>
               </mat-form-field>
             </div>
           </mat-grid-tile>
           <mat-grid-tile>
             <div style="position: absolute; left: 0;">
-              <mat-form-field appearance="standard">
+              <mat-form-field appearance="standard" style="width:25vw">
                 <mat-label>Email Address</mat-label>
                 <input matInput formControlName="emailCtrl" placeholder="Ex. smith@mycorp.com" type="email" required>
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                <mat-hint>Hint</mat-hint>
               </mat-form-field>
             </div>
           </mat-grid-tile>
           <mat-grid-tile>
             <div style="position: absolute; left: 0;">
-              <mat-form-field appearance="standard">
+              <mat-form-field appearance="standard" style="width:20vw">
                 <mat-label>Company Name</mat-label>
                 <input matInput formControlName="companyNameCtrl" placeholder="Ex. My Corp" required>
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                <mat-hint>Hint</mat-hint>
               </mat-form-field>
             </div>
           </mat-grid-tile>
         </mat-grid-list>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperPrevious style="float: left;">Back</button>
+          <button mat-button matStepperNext style="float: right;">Next</button>
         </div>
       </form>
     </div>
@@ -55,20 +50,11 @@
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Upload your STL</ng-template>
-      <div class="container" appDnd (fileDropped)="onFileDropped($event)">
-        <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
-        <img src="assets/img/dnd/ic-upload-file.svg" alt="">
-        <h3>Drag and drop file here</h3>
-        <h3>or</h3>
-        <label for="fileDropRef">Browse for file</label>
-      </div>
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
-      </mat-form-field>
+      <angular-file-uploader [config]="afuConfig" [resetUpload]=resetUpload3 (ApiResponse)="docUpload($event)">
+      </angular-file-uploader>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious style="float: left;">Back</button>
+        <button mat-button matStepperNext style="float: right;">Next</button>
       </div>
     </form>
   </mat-step>

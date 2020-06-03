@@ -12,6 +12,7 @@ import { MaterialModule } from './material-module';
 import { StlModelViewerModule } from 'angular-stl-model-viewer';
 import { ProgressComponent } from './components/progress/progress.component';
 import { DndDirective } from './directives/dnd.directive';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { DndDirective } from './directives/dnd.directive';
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
-    StlModelViewerModule
+    StlModelViewerModule,
+    AngularFileUploaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

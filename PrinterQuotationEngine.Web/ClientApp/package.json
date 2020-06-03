@@ -24,6 +24,7 @@
     "@angular/platform-server": "8.2.12",
     "@angular/router": "8.2.12",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
+    "angular-file-uploader": "^6.2.7",
     "angular-stl-model-viewer": "^0.6.0",
     "aspnet-prerendering": "^3.0.1",
     "bootstrap": "^4.3.1",

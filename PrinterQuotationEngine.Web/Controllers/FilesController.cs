@@ -12,13 +12,14 @@ using PrinterQuotationEngine.Web.Options;
 namespace PrinterQuotationEngine.Web.Controllers
 {
 	[ApiController]
-	[Route("[controller]")]
-	public class PrintCalculationController : ControllerBase
+	[Produces("application/json")]
+	[Route("api/[controller]/[action]")]
+	public class FilesController : Controller
 	{
 		private readonly ILogger<PrintCalculationController> _logger;
 		private readonly IOptions<AppOptions> _appOptionsAccessor;
 
-		public PrintCalculationController(ILogger<PrintCalculationController> logger, IOptions<AppOptions> appOptionsAccessor)
+		public FilesController(ILogger<PrintCalculationController> logger, IOptions<AppOptions> appOptionsAccessor)
 		{
 			_logger = logger;
 			_appOptionsAccessor = appOptionsAccessor;
@@ -50,7 +51,7 @@ namespace PrinterQuotationEngine.Web.Controllers
 			return Ok(new { count = files.Count, ids, size });
 		}
 
-		[HttpPost]
+		[HttpGet]
 		public async Task<IActionResult> GetFile(string fileId)
 		{
 			var filePath = Path.Combine(_appOptionsAccessor.Value.GetUploadFolderLocation(), fileId);
