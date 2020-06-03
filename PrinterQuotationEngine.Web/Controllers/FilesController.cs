@@ -37,8 +37,8 @@ namespace PrinterQuotationEngine.Web.Controllers
 			{
 				if (formFile.Length > 0)
 				{
-					var id = Path.GetRandomFileName();
-					var filePath = Path.Combine(_appOptionsAccessor.Value.GetUploadFolderLocation(), Path.GetRandomFileName());
+					var id = Guid.NewGuid().ToString();
+					var filePath = Path.Combine(_appOptionsAccessor.Value.GetUploadFolderLocation(), $"{id}.stl");
 
 					using (var stream = System.IO.File.Create(filePath))
 					{
@@ -55,7 +55,7 @@ namespace PrinterQuotationEngine.Web.Controllers
 		[HttpGet]
 		public async Task<IActionResult> GetFile(string fileId)
 		{
-			var filePath = Path.Combine(_appOptionsAccessor.Value.GetUploadFolderLocation(), fileId);
+			var filePath = Path.Combine(_appOptionsAccessor.Value.GetUploadFolderLocation(), $"{fileId}.stl");
 			return new PhysicalFileResult(filePath, "application/sla");
 		}
 	}

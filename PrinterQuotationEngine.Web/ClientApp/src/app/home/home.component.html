@@ -1,4 +1,4 @@
-<mat-horizontal-stepper [linear]="true" labelPosition="bottom" #stepper>
+<mat-horizontal-stepper [linear]="true" labelPosition="bottom" (selectionChange)="stepChanged($event)" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <ng-template matStepLabel>Your Info</ng-template>
     <div class="example-container">
@@ -50,13 +50,30 @@
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Upload your STL</ng-template>
-      <angular-file-uploader [config]="afuConfig" [resetUpload]=resetUpload3 (ApiResponse)="docUpload($event)">
+      <angular-file-uploader [config]="afuConfig" [resetUpload]=resetUpload (ApiResponse)="docUpload($event)">
       </angular-file-uploader>
       <div>
         <button mat-button matStepperPrevious style="float: left;">Back</button>
         <button mat-button matStepperNext style="float: right;">Next</button>
       </div>
     </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <ng-template matStepLabel>Confirm Model</ng-template>
+    <mat-grid-list cols="2">
+      <mat-grid-tile>
+        <app-stl-model-viewer #stlviewer id="stlviewer" name="stlviewer" [meshOptions]="[{position: {x: 0, y: 0, z: 0}}]" [stlModels]="['./WorkingFiles/' + ids[0] + '.stl']"></app-stl-model-viewer>
+      </mat-grid-tile>
+      <mat-grid-tile>
+
+      </mat-grid-tile>
+      <mat-grid-tile>
+
+      </mat-grid-tile>
+      <mat-grid-tile>
+
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>

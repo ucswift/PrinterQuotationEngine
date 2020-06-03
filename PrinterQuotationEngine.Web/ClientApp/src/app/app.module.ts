@@ -13,6 +13,7 @@ import { StlModelViewerModule } from 'angular-stl-model-viewer';
 import { ProgressComponent } from './components/progress/progress.component';
 import { DndDirective } from './directives/dnd.directive';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { StlModelViewerComponent } from './components/angular-stl-model-viewer/angular-stl-model-viewer.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     NavMenuComponent,
     HomeComponent,
     ProgressComponent,
-    DndDirective
+    DndDirective,
+    StlModelViewerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -35,7 +37,6 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
-    StlModelViewerModule,
     AngularFileUploaderModule
   ],
   providers: [],
