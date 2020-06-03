@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   public secondFormGroup: FormGroup;
   public thirdFormGroup: FormGroup;
   public resetUpload: boolean;
-  @ViewChild('stlviewer', { static: false }) stlviewerEl: StlModelViewerComponent;
+  @ViewChild('stlviewer') stlviewerEl: StlModelViewerComponent;
   files: any[] = [];
   ids: string[] = [];
 
