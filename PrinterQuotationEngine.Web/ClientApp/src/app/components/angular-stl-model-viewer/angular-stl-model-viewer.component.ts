@@ -161,6 +161,10 @@ export class StlModelViewerComponent implements OnInit, OnDestroy {
 
         window.addEventListener('resize', this.onWindowResize, false);
 
+        this.load();
+    }
+
+    public async load() {
         const meshCreations = this.stlModels.map((modelPath, index) => this.createMesh(modelPath, this.meshOptions[index]));
         const meshes: THREE.Object3D[] = await Promise.all(meshCreations);
 
@@ -210,7 +214,7 @@ export class StlModelViewerComponent implements OnInit, OnDestroy {
         this.renderer.setSize(width, height);
     }
 
-    onWindowResize = () => {
+    public onWindowResize = () => {
         this.setSizes();
         this.render();
     }

@@ -60,18 +60,65 @@
   </mat-step>
   <mat-step [stepControl]="thirdFormGroup">
     <ng-template matStepLabel>Confirm Model</ng-template>
-    <mat-grid-list cols="2">
+    <mat-grid-list cols="2" rowHeight="1:1" gutterSize="0">
       <mat-grid-tile>
-        <app-stl-model-viewer #stlviewer id="stlviewer" name="stlviewer" [meshOptions]="[{position: {x: 0, y: 0, z: 0}}]" [stlModels]="['./WorkingFiles/' + ids[0] + '.stl']"></app-stl-model-viewer>
+        <div style="width: 98%; height:98%;border-style: solid;border-width: 2px;border-color:lightsteelblue;">
+          <app-stl-model-viewer #stlviewer id="stlviewer" name="stlviewer"
+            [meshOptions]="[{position: {x: 0, y: 0, z: 0}}]"></app-stl-model-viewer>
+        </div>
       </mat-grid-tile>
       <mat-grid-tile>
-
-      </mat-grid-tile>
-      <mat-grid-tile>
-
-      </mat-grid-tile>
-      <mat-grid-tile>
-
+        <mat-grid-list cols="1" rowHeight="40px" style="width: 100%;">
+          <mat-grid-tile>
+            Verify the model is the correct one on the screen in the left and select your options from below. Press Next to generate a quote.
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div>
+              <mat-form-field>
+                <mat-label>Material</mat-label>
+                <mat-select [(value)]="material">
+                  <mat-option value="PLA">PLA</mat-option>
+                  <mat-option value="PETG">PETG (PET)</mat-option>
+                  <mat-option value="ABS">ABS</mat-option>
+                  <mat-option value="Nylon">Nylon</mat-option>
+                  <mat-option value="TPU">TPU</mat-option>
+                  <mat-option value="PC">PC</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <mat-label>Color</mat-label>
+              <mat-select [(value)]="color">
+                <mat-option value="Gray">Gray</mat-option>
+                <mat-option value="Black">Black</mat-option>
+                <mat-option value="Yellow">Yellow</mat-option>
+                <mat-option value="Orange">Orange</mat-option>
+                <mat-option value="Pink">Pink</mat-option>
+                <mat-option value="Copper">Copper</mat-option>
+                <mat-option value="Blue">Blue</mat-option>
+                <mat-option value="Green">Green</mat-option>
+                <mat-option value="White">White</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            <mat-form-field>
+              <mat-label>Infill</mat-label>
+              <mat-select [(value)]="infill">
+                <mat-option value="25">25%</mat-option>
+                <mat-option value="50">50%</mat-option>
+                <mat-option value="75">75%</mat-option>
+                <mat-option value="100">100%</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-step>

@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
   files: any[] = [];
   ids: string[] = [];
 
+  public material = 'PLA';
+  public infill = 25;
+  public color = 'Gray';
+
   public afuConfig: AngularFileUploaderConfig = {
     theme: 'dragNDrop',
     hideProgressBar: true,
@@ -56,14 +60,12 @@ export class HomeComponent implements OnInit {
 
   }
 
-  public stepChanged(e) {
+  public async stepChanged(e) {
     let file = 0;
     if (e.selectedIndex === 2) {
-      this.zone.run(() => {
-        this.stlviewerEl.stlModels = [`'${this.baseUrl}api/Files/GetFile?fileId=${this.ids[file]}'`];
-        this.cdr.detectChanges();
-        this.stlviewerEl.onWindowResize();
-      });
+        this.stlviewerEl.hasControls = true;
+        this.stlviewerEl.stlModels = [`${this.baseUrl}api/Files/GetFile?fileId=${this.ids[file]}`];
+        await this.stlviewerEl.load();
     }
   }
 
