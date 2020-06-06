@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PrinterQuotationEngine.Web.Options;
+using PrinterQuotationEngine.Web.Services;
 
 namespace PrinterQuotationEngine.Web
 {
@@ -30,6 +31,11 @@ namespace PrinterQuotationEngine.Web
 
 			var configOptions = Configuration.GetSection("AppOptions").Get<AppOptions>();
 			services.Configure<AppOptions>(Configuration.GetSection("AppOptions"));
+
+			var printOptions = Configuration.GetSection("PrintOptions").Get<PrintOptions>();
+			services.Configure<PrintOptions>(Configuration.GetSection("PrintOptions"));
+
+			services.AddSingleton<IQuoteService, QuoteService>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

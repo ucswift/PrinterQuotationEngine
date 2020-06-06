@@ -14,7 +14,7 @@ import { ProgressComponent } from './components/progress/progress.component';
 import { DndDirective } from './directives/dnd.directive';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { StlModelViewerComponent } from './components/angular-stl-model-viewer/angular-stl-model-viewer.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { StlModelViewerComponent } from './components/angular-stl-model-viewer/a
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

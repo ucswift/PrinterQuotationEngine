@@ -33,9 +33,34 @@
           </mat-grid-tile>
           <mat-grid-tile>
             <div style="position: absolute; left: 0;">
+              <mat-form-field appearance="standard" style="width:10vw">
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneCtrl" placeholder="Ex. 555-555-5555" type="tel" required>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div style="position: absolute; left: 0;">
               <mat-form-field appearance="standard" style="width:20vw">
                 <mat-label>Company Name</mat-label>
                 <input matInput formControlName="companyNameCtrl" placeholder="Ex. My Corp" required>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div style="position: absolute; left: 0;">
+              <mat-form-field appearance="standard" style="width:25vw">
+                <mat-label>Job Title</mat-label>
+                <input matInput formControlName="jobTitleCtrl" placeholder="Ex. Baby Yoda" required>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div style="position: absolute; left: 0;">
+              <mat-form-field appearance="standard" style="width:25vw">
+                <mat-label>Job Description</mat-label>
+                <textarea matInput formControlName="jobDescriptionCtrl" placeholder="Ex. ">
+               </textarea>
               </mat-form-field>
             </div>
           </mat-grid-tile>
@@ -68,62 +93,80 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile>
-        <mat-grid-list cols="1" rowHeight="40px" style="width: 100%;">
-          <mat-grid-tile>
-            Verify the model is the correct one on the screen in the left and select your options from below. Press Next to generate a quote.
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <div>
-              <mat-form-field>
-                <mat-label>Material</mat-label>
-                <mat-select [(value)]="material">
-                  <mat-option value="PLA">PLA</mat-option>
-                  <mat-option value="PETG">PETG (PET)</mat-option>
-                  <mat-option value="ABS">ABS</mat-option>
-                  <mat-option value="Nylon">Nylon</mat-option>
-                  <mat-option value="TPU">TPU</mat-option>
-                  <mat-option value="PC">PC</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </mat-grid-tile>
-        </mat-grid-list>
-        <mat-grid-tile>
-          <div>
-            <mat-form-field>
-              <mat-label>Color</mat-label>
-              <mat-select [(value)]="color">
-                <mat-option value="Gray">Gray</mat-option>
-                <mat-option value="Black">Black</mat-option>
-                <mat-option value="Yellow">Yellow</mat-option>
-                <mat-option value="Orange">Orange</mat-option>
-                <mat-option value="Pink">Pink</mat-option>
-                <mat-option value="Copper">Copper</mat-option>
-                <mat-option value="Blue">Blue</mat-option>
-                <mat-option value="Green">Green</mat-option>
-                <mat-option value="White">White</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <div>
-            <mat-form-field>
-              <mat-label>Infill</mat-label>
-              <mat-select [(value)]="infill">
-                <mat-option value="25">25%</mat-option>
-                <mat-option value="50">50%</mat-option>
-                <mat-option value="75">75%</mat-option>
-                <mat-option value="100">100%</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </mat-grid-tile>
+        <mat-card style="width: 100%; height: 100%;">
+          <mat-grid-list cols="1" rowHeight="100px" style="width: 100%;">
+            <mat-grid-tile>
+              Verify the model is the correct one on the screen in the left and select your options from below. Press
+              Next
+              to generate a quote.
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field>
+                  <mat-label>Material</mat-label>
+                  <mat-select [(ngModel)]="material">
+                    <mat-option (selectionChange)="materialChange($event)" *ngFor="let material of materials"
+                      [value]="material.name">{{ material.name }}</mat-option>
+                  </mat-select>
+                  <mat-icon matSuffix>help_outline</mat-icon>
+                  <mat-hint>The Material you want used for your Print, PLA is the most common</mat-hint>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field>
+                  <mat-label>Color</mat-label>
+                  <mat-select [(ngModel)]="color">
+                    <mat-option *ngFor="let color of colors" [value]="color">{{ color }}</mat-option>
+                  </mat-select>
+                  <mat-icon matSuffix>help_outline</mat-icon>
+                  <mat-hint>Material color to print with, we recommend Gray for prints you want to paint</mat-hint>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field>
+                  <mat-label>Infill</mat-label>
+                  <mat-select [(ngModel)]="infill">
+                    <mat-option value="25">25%</mat-option>
+                    <mat-option value="50">50%</mat-option>
+                    <mat-option value="75">75%</mat-option>
+                    <mat-option value="100">100%</mat-option>
+                  </mat-select>
+                  <mat-icon matSuffix>help_outline</mat-icon>
+                  <mat-hint>Infill used for printing, infill adds significantly to time and cost</mat-hint>
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                <mat-form-field>
+                  <mat-label>Quantity</mat-label>
+                  <input matInput [(ngModel)]="quantity" type="number" min="1">
+                </mat-form-field>
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
+    <div>
+      <button mat-button matStepperPrevious style="float: left;">Back</button>
+      <button mat-button matStepperNext style="float: right;">Next</button>
+    </div>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
+    <ng-template matStepLabel>Quote</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious style="float: left;">Back</button>
+      <button mat-button matStepperNext style="float: right;">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Submit</ng-template>
     <p>You are now done.</p>
     <div>
       <button mat-button matStepperPrevious>Back</button>

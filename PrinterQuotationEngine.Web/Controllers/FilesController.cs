@@ -16,10 +16,10 @@ namespace PrinterQuotationEngine.Web.Controllers
 	[Route("api/[controller]/[action]")]
 	public class FilesController : Controller
 	{
-		private readonly ILogger<PrintCalculationController> _logger;
+		private readonly ILogger<FilesController> _logger;
 		private readonly IOptions<AppOptions> _appOptionsAccessor;
 
-		public FilesController(ILogger<PrintCalculationController> logger, IOptions<AppOptions> appOptionsAccessor)
+		public FilesController(ILogger<FilesController> logger, IOptions<AppOptions> appOptionsAccessor)
 		{
 			_logger = logger;
 			_appOptionsAccessor = appOptionsAccessor;

@@ -28,6 +28,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\References\agg-sharp\agg\Agg.csproj" />
+    <ProjectReference Include="..\References\agg-sharp\ImageProcessing\ImageProcessing.csproj" />
+    <ProjectReference Include="..\References\agg-sharp\Typography.One\Typography.One.csproj" />
+    <ProjectReference Include="..\References\agg-sharp\VectorMath\VectorMath.csproj" />
+    <ProjectReference Include="..\References\gsGCode\gsGCode.csproj" />
+    <ProjectReference Include="..\References\MatterSlice\MatterSliceLib\MatterSliceLib.csproj" />
+    <ProjectReference Include="..\References\MatterSlice\MSClipperLib\MSClipperLib.csproj" />
+    <ProjectReference Include="..\References\MatterSlice\Pathfinding\Pathfinding.csproj" />
+    <ProjectReference Include="..\References\MatterSlice\QuadTree\QuadTree.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="WorkingFiles\Sphere20.stl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
