@@ -34,7 +34,7 @@
     "oidc-client": "^1.9.1",
     "popper.js": "^1.16.0",
     "rxjs": "^6.5.3",
-    "three": "^0.117.0",
+    "three": "^0.137.0",
     "tslib": "^1.10.0",
     "underscore": "^1.10.2",
     "zone.js": "~0.10.2"
